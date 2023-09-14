@@ -23,9 +23,11 @@ tasks.withType(JavaCompile) {
 
 dependencies {
   compileOnly('jakarta.platform:jakarta.jakartaee-web-api:9.1.0')
-
+  implementation 'org.mariadb.jdbc:mariadb-java-client:3.2.0'
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+  implementation group: 'org.apache.maven', name: 'maven-slf4j-provider', version: '3.9.4'
+  implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.6.15.Final'
 }
 
 test {
