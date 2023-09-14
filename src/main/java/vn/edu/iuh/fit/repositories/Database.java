@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Database {
+    private static Database instance=null;
     private Connection connection=null;
 
     public Database() throws RuntimeException {
@@ -19,35 +20,14 @@ public class Database {
         }
     }
 
-    public List<Account> getAll(){
-        PreparedStatement statement = null;
-        List<Account>lst=new ArrayList<>();
-        try {
-            statement = connection.prepareStatement("Select * from account ");
-            ResultSet rs = statement.executeQuery();
-            while(rs.next()){
-                Account st = new Account(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
-                lst.add(st);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public static Database getInstance() throws RuntimeException {
+        if(instance==null){
+            instance=new Database();
         }
-        return lst;
+        return instance;
     }
 
-    public Optional<Account> get(String id){
-        PreparedStatement statement = null;
-        try {
-            statement = connection.prepareStatement("Select * from account where account_id=?");
-            statement.setString(1, id);
-            ResultSet rs = statement.executeQuery();
-            if(rs.next()){
-                Account st = new Account(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
-                return Optional.of(st);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return Optional.empty();
+    public Connection getConnection() {
+        return connection;
     }
 }

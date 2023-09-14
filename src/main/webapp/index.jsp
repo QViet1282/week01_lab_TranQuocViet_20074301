@@ -5,7 +5,7 @@
   <title>JSP - Hello World</title>
 </head>
 <body>
-<form action="/ControlServlet" method="get">
+<form action="/ControlServlet" method="post">
   <%
     try {
       // Load the MariaDB JDBC driver
@@ -16,6 +16,7 @@
       e.printStackTrace();
     }
   %>
+  <input type="hidden" name="action" value="login">
   <label for="username">Tài khoản:</label>
   <input type="text" id="username" name="username" required><br><br>
 

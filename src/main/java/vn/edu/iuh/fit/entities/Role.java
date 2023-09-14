@@ -12,14 +12,14 @@ public class Role {
     private String role_id;
     private String role_Name;
     private String description;
-    private String status;
+    private int status;
 
     @OneToMany(mappedBy = "role")
     private List<GrantAccess> listGA;
     public Role() {
     }
 
-    public Role(String role_id, String role_Name, String description, String status) {
+    public Role(String role_id, String role_Name, String description, int status) {
         this.role_id = role_id;
         this.role_Name = role_Name;
         this.description = description;
@@ -50,11 +50,11 @@ public class Role {
         this.description = description;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

@@ -1,5 +1,6 @@
 package vn.edu.iuh.fit.entities;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -14,6 +15,7 @@ public class Account {
     private String password;
     private String email;
     private String phone;
+
     private String status;
     @OneToMany(mappedBy = "account")
     private List<GrantAccess> listGA;

@@ -5,14 +5,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import javax.annotation.processing.Generated;
 import java.util.Date;
 
 @Entity
 public class Log {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private int id;
     private String account_id;
     private Date login_time;
     private Date logout_time;
@@ -21,7 +20,7 @@ public class Log {
     public Log() {
     }
 
-    public Log(String id, String account_id, Date login_time, Date logout_time, String notes) {
+    public Log(int id, String account_id, Date login_time, Date logout_time, String notes) {
         this.id = id;
         this.account_id = account_id;
         this.login_time = login_time;
@@ -29,11 +28,11 @@ public class Log {
         this.notes = notes;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
