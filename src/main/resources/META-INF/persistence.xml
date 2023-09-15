@@ -14,7 +14,7 @@
             <property name="eclipselink.jdbc.password" value="sapassword"/>
 <!--            <property name="hibernate.archive.autodetection" value="class"/>-->
 <!--            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>-->
-<!--            <property name="hibernate.show_sql" value="true"/>-->
+            <property name="hibernate.show_sql" value="true"/>
 <!--            <property name="hibernate.format_sql" value="true"/>-->
 <!--            <property name="hibernate.hbm2ddl.auto" value="update"/>-->
 <!--            <property name="hbm2ddl.auto" value="update"/>-->

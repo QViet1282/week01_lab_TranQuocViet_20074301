@@ -32,9 +32,9 @@ public class ControlServlet extends HttpServlet {
             case "login":
                 accountServices.login(req,resp);
                 break;
-//            case "logout":
-//                logout(req,resp);
-//                break;
+            case "logout":
+                accountServices.logout(req,resp);
+                break;
 //            case "register":
 //                register(req,resp);
 //                break;
