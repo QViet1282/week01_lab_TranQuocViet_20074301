@@ -18,7 +18,7 @@
             cursor: pointer;
         }
     </style>
-    <title>Title</title>
+    <title>Dashboard</title>
 
 </head>
 <body>
@@ -44,21 +44,20 @@
                 <td><%= account.getFull_name() %></td>
                 <td><%= account.getEmail() %></td>
                 <td><%= account.getPhone() %></td>
-                <td>
-                    <form action="/control" method="post">
-                        <input type="hidden" name="id" value="<%= account.getAccount_id() %>">
-                        <input type="hidden" name="action" value="update">
-                        <button type="submit">Update</button>
-                    </form>
-                    <form action="/control" method="post">
-                        <input type="hidden" name="id" value="<%= account.getAccount_id() %>">
-                        <input type="hidden" name="action" value="delete">
-                        <button type="submit">Delete</button>
-                    </form>
-                </td>
+<%--                <td>--%>
+<%--                    <form action="/control" method="post">--%>
+<%--                        <input type="hidden" name="id" value="<%= account.getAccount_id() %>">--%>
+<%--                        <input type="hidden" name="action" value="update">--%>
+<%--                        <button type="submit">Update</button>--%>
+<%--                    </form>--%>
+<%--                    <form action="/control" method="post">--%>
+<%--                        <input type="hidden" name="id" value="<%= account.getAccount_id() %>">--%>
+<%--                        <input type="hidden" name="action" value="delete">--%>
+<%--                        <button type="submit">Delete</button>--%>
+<%--                    </form>--%>
+<%--                </td>--%>
             </tr>
     <% } %>
-
     <!-- Thêm các dòng tương tự cho các tài khoản khác -->
     </tbody>
 </table>

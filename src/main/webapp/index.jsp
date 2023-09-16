@@ -11,7 +11,6 @@
       // Load the MariaDB JDBC driver
       Class.forName("org.mariadb.jdbc.Driver");
 
-      // Now you can establish a database connection and perform other database-related tasks if needed.
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -45,7 +45,7 @@ public class AccountServices {
 //                timestamplogin = Timestamp.valueOf(current);
 //                Calendar now = Calendar.getInstance();
                 logId = logRepository.create(account.get().getAccount_id(),"");
-                req.setAttribute("logId",logId);
+//                req.setAttribute("logId",logId);
                 req.getRequestDispatcher("dashboard.jsp").forward(req,resp);
 
 
@@ -53,10 +53,8 @@ public class AccountServices {
             else {
                 resp.setContentType("text/html");
 //                resp.getWriter().println("Đăng nhập thành công<br>");
-                resp.getWriter().println("Fullname: "+account.get().getFull_name()+"<br>");
-                resp.getWriter().println("Email: "+account.get().getEmail()+"<br>");
-                resp.getWriter().println("Phone: "+account.get().getPhone()+"<br>");
-                resp.getWriter().println("Status: "+account.get().getStatus()+"<br>");
+                logId = logRepository.create(account.get().getAccount_id(),"");
+                req.getRequestDispatcher("pageuser.jsp").forward(req,resp);
             }
 
 
